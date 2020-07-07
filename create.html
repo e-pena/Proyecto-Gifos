@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Esteban Mariano Pena" />
+		<meta name="description" content="Búsqueda y creación de gif" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+			integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.12.1/css/brands.css"
+			integrity="sha384-+2AYGyI2bR10NExh4Lu/3NQmpNxck8EcRE7aATrMi9QQ9OAKQAQw1bcrlWkp0tdM"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.12.1/css/fontawesome.css"
+			integrity="sha384-C1VkjHy10mh0wo7rz2xEDdqrfn5C+AJpaCpUyScFHzKb0mnAU3I//2RrdAE+LfQ6"
+			crossorigin="anonymous"
+		/>
+		<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet" />
+		<link id="estilo-actual" rel="stylesheet" type="text/css" href="styles/style.css " />
+		<title>Crea y observa tus guifos</title>
+	</head>
+
+	<body>
+		<header class="encabezado">
+			<div class="encabezado__barra-superior">
+				<p>
+					¡Bienvenidos/as a Guifos.com! -----Donde los gifs están.//////Número de visitas: 12.765.803
+				</p>
+			</div>
+			<div class="encabezado__menu">
+				<div class="flecha-atras">
+					<a href="index.html" class="volver" id="volver"><img src="images/arrow.svg" alt="Volver atrás" /></a>
+				</div>
+				<div class="encabezado__menu__logo">
+					<img src="images/gifOF_logo.png" alt="Logo de gifOS" class="logo" id="logo-day" />
+					<img src="images/gifOF_logo_dark.png" alt="Logo de gifOS" class="logo oculto" id="logo-night" />
+				</div>
+				<div class="encabezado__menu__contenedor">
+					<div class="menu__contenedor__botones">
+						<div class="contenedor__botones__boton oculto">
+							<a href="create.html" class="boton-1">Crear Guifos</a>
+						</div>
+						<div class="contenedor__botones__boton contenedor-boton-2 oculto">
+							<button type="button" class="boton-2" id="btn-2">Elegir tema</button>
+							<button type="button" class="boton-2 flecha"><i class="fas fa-sort-down"></i></button>
+							<div class="botones__boton__tema oculto" id="btn-tema">
+								<button type="button" class="boton-day" id="boton-day"><em>S</em>ailor Day</button>
+								<button type="button" class="boton-night" id="boton-night"><em>S</em>ailor Night</button>
+							</div>
+						</div>
+						<div class="contenedor__botones__boton oculto">
+							<button class="boton-3" type="button"><em>M</em>is Guifos</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<section class="crear-guifo">
+			<div id="cartel-inicial">
+				<h3 class="cartel-inicial__barra-superior">Crear Guifos</h3>
+				<div class="cartel-inicial__interior">
+					<div class="cartel-inicial__ventana">
+						<img src="images/window.png" alt="Imagen de ventana" />
+					</div>
+					<div class="cartel-inicial__texto">
+						<div class="cartel-inicial__titulo">
+							<h2 class="cartel-inicial__titulo__texto">Aquí podrás crear tus propios guifos</h2>
+						</div>
+						<div class="cartel-inicial__instrucciones">
+							<p>
+								Crear tu <em>guifo</em> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos
+								personalizados. Los pasos para crear tu guifo son:
+							</p>
+							<p><strong>1)</strong> Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</p>
+							<p><strong>2)</strong> Capturar tu momento guifo</p>
+							<p><strong>3)</strong> Revisar el momento</p>
+							<p><strong>4)</strong> Listo para subir y compartir!</p>
+							<p>¿Quieres comenzar a crear tu <em>guifo</em> ahora?</p>
+						</div>
+					</div>
+				</div>
+				<div class="cartel-inicial__botones">
+					<button type="button" id="btn-cancelar">Cancelar</button>
+					<button type="button" id="btn-comenzar">Comenzar</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="seccion-precaptura oculto">
+			<div id="precaptura">
+				<div class="precaptura__header">
+					<h3 class="precaptura__barra-superior">Un Chequeo Antes de Empezar</h3>
+					<div class="precaptura__cierre">
+						<button type="button" class="boton-cierre"><img src="images/close.svg" alt="Botón de cierre" /></button>
+					</div>
+				</div>
+				<div class="precaptura__imagen">
+					<video src="#" id="precaptura-video"></video>
+				</div>
+				<div class="precaptura__botones">
+					<button type="button" id="btn-capturar-camara">
+						<img id="imagen-camara" src="images/camera.svg" alt="Cámara" />
+					</button>
+					<button type="button" id="btn-capturar-texto">Capturar</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="seccion-captura oculto">
+			<div id="captura">
+				<div class="captura__header">
+					<h3 class="captura__barra-superior">Capturando Tu Guifo</h3>
+					<div class="captura__cierre">
+						<button type="button" class="boton-cierre"><img src="images/close.svg" alt="Botón de cierre" /></button>
+					</div>
+				</div>
+				<div class="captura__imagen">
+					<video src="#" id="captura-video"></video>
+				</div>
+				<div class="captura__abajo">
+					<div class="captura-timer">00:00:00:00</div>
+					<div class="captura__botones">
+						<button type="button" id="btn-grabar-icono">
+							<img id="imagen-grabando" src="images/recording.svg" alt="Grabando" />
+						</button>
+						<button type="button" id="btn-listo">Listo</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="seccion-previa oculto">
+			<div id="previa">
+				<div class="previa__header">
+					<h3 class="previa__barra-superior">Vista Previa</h3>
+				</div>
+				<div class="previa__imagen">
+					<img id="vista-previa" src="#" alt="Gif creado" />
+				</div>
+				<div class="previa__abajo">
+					<div class="previa-timer">00:00:00:00</div>
+					<div class="play">
+						<button type="button" id="btn-play"><img src="images/forward.svg" alt="Botón de play" /></button>
+						<div class="play__contenedor">
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+							<div class="play__cuadrados"></div>
+						</div>
+					</div>
+					<div class="previa__botones">
+						<button type="button" id="btn-repetir">Repetir Captura</button>
+						<button type="button" id="btn-subir">Subir Guifo</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="seccion-subiendo oculto">
+			<div id="subiendo">
+				<div class="subiendo__header">
+					<h3 class="subiendo__barra-superior">Subiendo Guifo</h3>
+					<div class="subiendo__cierre">
+						<button type="button" class="boton-cierre"><img src="images/close.svg" alt="Botón de cierre" /></button>
+					</div>
+				</div>
+				<div class="subiendo__imagen">
+					<div class="subiendo__imagen__globo">
+						<img src="images/globe_img.png" alt="Globo terráqueo" />
+					</div>
+					<div class="subiendo__imagen__titulo">
+						<h3>Estamos subiendo tu guifo...</h3>
+					</div>
+					<div class="subiendo__imagen__carga">
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+						<div class="carga__cuadrados"></div>
+					</div>
+					<div class="subiendo__imagen__tiempo">
+						<p>Tiempo restante: <em>38 años</em> algunos minutos</p>
+					</div>
+				</div>
+				<button type="button" id="btn-cancelar-subida">Cancelar</button>
+			</div>
+		</section>
+
+		<section class="seccion-subida-exitosa oculto">
+			<div id="subida-exitosa">
+				<div class="subida-exitosa__header">
+					<h3 class="subida-exitosa__barra-superior">Guifo Subido Con Éxito</h3>
+					<div class="subida-exitosa__cierre">
+						<button type="button" class="boton-cierre"><img src="images/close.svg" alt="Botón de cierre" /></button>
+					</div>
+				</div>
+				<div class="subida-exitosa__principal">
+					<div class="subida-exitosa__imagen">
+						<img id="subida-exitosa-imagen" src="#" alt="Gif subido exitosamente" />
+					</div>
+					<div class="subida-exitosa__texto">
+						<div class="subida-exitosa__titulo">
+							<h3>Guifo creado con éxito</h3>
+						</div>
+						<div class="subida-exitosa__botones">
+							<button type="button" id="btn-copiar">Copiar Enlace Guifo</button>
+							<button type="button" id="btn-descargar">Descargar Guifo</button>
+						</div>
+					</div>
+				</div>
+				<button type="button" id="btn-finalizado">Listo</button>
+			</div>
+		</section>
+
+		<section class="mis-guifos">
+			<div class="mis-guifos__titulo">
+				<h5 class="mis-guifos__titulo__texto">Mis guifos</h5>
+			</div>
+			<div class="mis-guifos__contenedor">
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+			</div>
+		</section>
+
+		<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+		<script src="scripts/scrcreate.js"></script>
+	</body>
+</html>

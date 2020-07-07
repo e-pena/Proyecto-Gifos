@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="Esteban Mariano Pena" />
+		<meta name="description" content="Búsqueda y creación de gif" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+			integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.12.1/css/brands.css"
+			integrity="sha384-+2AYGyI2bR10NExh4Lu/3NQmpNxck8EcRE7aATrMi9QQ9OAKQAQw1bcrlWkp0tdM"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.12.1/css/fontawesome.css"
+			integrity="sha384-C1VkjHy10mh0wo7rz2xEDdqrfn5C+AJpaCpUyScFHzKb0mnAU3I//2RrdAE+LfQ6"
+			crossorigin="anonymous"
+		/>
+		<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet" />
+		<link id="estilo-actual" rel="stylesheet" type="text/css" href="styles/style.css " />
+		<title>gifOs</title>
+	</head>
+
+	<body>
+		<header class="encabezado">
+			<div class="encabezado__barra-superior">
+				<p>
+					¡Bienvenidos/as a Guifos.com! -----Donde los gifs están.//////Número de visitas: 12.765.803
+				</p>
+			</div>
+			<div class="encabezado__menu">
+				<div class="encabezado__menu__logo">
+					<img src="images/gifOF_logo.png" alt="Logo de gifOS" class="logo" id="logo-day" />
+					<img src="images/gifOF_logo_dark.png" alt="Logo de gifOS" class="logo oculto" id="logo-night" />
+				</div>
+				<div class="encabezado__menu__contenedor">
+					<div class="menu__contenedor__botones">
+						<div class="contenedor__botones__boton">
+							<a href="create.html" class="boton-1">Crear Guifos</a>
+						</div>
+						<div class="contenedor__botones__boton contenedor-boton-2">
+							<button type="button" class="boton-2" id="btn-2">Elegir tema</button>
+							<button type="button" class="boton-2 flecha"><i class="fas fa-sort-down"></i></button>
+							<div class="botones__boton__tema oculto" id="btn-tema">
+								<button type="button" class="boton-day" id="boton-day"><em>S</em>ailor Day</button>
+								<button type="button" class="boton-night" id="boton-night"><em>S</em>ailor Night</button>
+							</div>
+						</div>
+						<div class="contenedor__botones__boton">
+							<button class="boton-3" type="button"><em>M</em>is Guifos</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="encabezado__contenedor" id="buscador">
+				<div class="encabezado__contenedor__busqueda">
+					<form id="formulario-busqueda" method="get">
+						<h3 class="encabezado__contenedor__busqueda__texto">Buscar</h3>
+						<div class="encabezado__contenedor__busqueda__contenedor">
+							<div class="encabezado__contenedor__busqueda__barra">
+								<input
+									type="text"
+									name="buscador-principal"
+									id="buscador-principal"
+									placeholder="Busca gifs, hashtags, temas, busca lo que quieras..."
+								/>
+							</div>
+							<div class="encabezado__contenedor__busqueda__boton">
+								<button type="submit" class="input-inactivo" id="btn-buscar">
+									<i class="fas fa-search"></i>Buscar
+								</button>
+							</div>
+						</div>
+						<div class="busqueda__opciones oculto">
+							<button type="submit" class="busqueda__opciones__resultados" id="opcion-resultado-1"></button>
+							<button type="submit" class="busqueda__opciones__resultados" id="opcion-resultado-2"></button>
+							<button type="submit" class="busqueda__opciones__resultados" id="opcion-resultado-3"></button>
+						</div>
+						<div class="busqueda__tags oculto">
+							<button type="submit" class="busqueda__tags__resultados oculto"></button>
+							<button type="submit" class="busqueda__tags__resultados oculto"></button>
+							<button type="submit" class="busqueda__tags__resultados oculto"></button>
+							<button type="submit" class="busqueda__tags__resultados oculto"></button>
+							<button type="submit" class="busqueda__tags__resultados oculto"></button>
+							<button type="submit" class="busqueda__tags__resultados oculto"></button>
+							<button type="submit" class="busqueda__tags__resultados oculto"></button>
+							<button type="submit" class="busqueda__tags__resultados oculto"></button>
+							<button type="submit" class="busqueda__tags__resultados oculto"></button>
+							<button type="submit" class="busqueda__tags__resultados oculto"></button>
+							<button type="submit" class="busqueda__tags__resultados oculto"></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</header>
+
+		<!-- SECCIÓN DE LAS SUGERENCIAS.-->
+		<section class="sugerencias secciones">
+			<div class="sugerencias__titulo">
+				<h5 class="sugerencias__titulo__texto">Hoy te sugerimos:</h5>
+			</div>
+			<div class="sugerencias__gran-contenedor" id="#sugerencias__gran-contenedor">
+				<div class="sugerencias__contenedor">
+					<div class="sugerencias__contenedor__encabezado">
+						<span class="sugerencias__contenedor__encabezado__texto"></span>
+						<div class="sugerencias__contenedor__encabezado__cierre">
+							<button type="button" class="boton-cierre"><img src="images/close.svg" alt="Botón de cierre" /></button>
+						</div>
+					</div>
+					<div class="sugerencias__contenedor__gif">
+						<img class="sugerencias__gif" src="#" alt="Gif sugerido" />
+						<div class="sugerencias__contenedor__gif__boton">
+							<button type="button">Ver más...</button>
+							<div class="funcion-ver-mas oculto"></div>
+						</div>
+					</div>
+				</div>
+				<div class="sugerencias__contenedor">
+					<div class="sugerencias__contenedor__encabezado">
+						<span class="sugerencias__contenedor__encabezado__texto"></span>
+						<div class="sugerencias__contenedor__encabezado__cierre">
+							<button type="button" class="boton-cierre"><img src="images/close.svg" alt="Botón de cierre" /></button>
+						</div>
+					</div>
+					<div class="sugerencias__contenedor__gif">
+						<img class="sugerencias__gif" src="#" alt="Gif sugerido" />
+						<div class="sugerencias__contenedor__gif__boton">
+							<button type="button">Ver más...</button>
+							<div class="funcion-ver-mas oculto"></div>
+						</div>
+					</div>
+				</div>
+				<div class="sugerencias__contenedor">
+					<div class="sugerencias__contenedor__encabezado">
+						<span class="sugerencias__contenedor__encabezado__texto"></span>
+						<div class="sugerencias__contenedor__encabezado__cierre">
+							<button type="button" class="boton-cierre"><img src="images/close.svg" alt="Botón de cierre" /></button>
+						</div>
+					</div>
+					<div class="sugerencias__contenedor__gif">
+						<img class="sugerencias__gif" src="#" alt="Gif sugerido" />
+						<div class="sugerencias__contenedor__gif__boton">
+							<button type="button">Ver más...</button>
+							<div class="funcion-ver-mas oculto"></div>
+						</div>
+					</div>
+				</div>
+				<div class="sugerencias__contenedor">
+					<div class="sugerencias__contenedor__encabezado">
+						<span class="sugerencias__contenedor__encabezado__texto"></span>
+						<div class="sugerencias__contenedor__encabezado__cierre">
+							<button type="button" class="boton-cierre"><img src="images/close.svg" alt="Botón de cierre" /></button>
+						</div>
+					</div>
+					<div class="sugerencias__contenedor__gif">
+						<img class="sugerencias__gif" src="#" alt="Gif sugerido" />
+						<div class="sugerencias__contenedor__gif__boton">
+							<button type="button">Ver más...</button>
+							<div class="funcion-ver-mas oculto"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="tendencias secciones">
+			<div class="tendencias__titulo">
+				<h5 class="tendencias__titulo__texto">Tendencias:</h5>
+			</div>
+			<div class="tendencias__contenedor">
+				<div class="tendencias__contenedor__gif">
+					<img class="tendencias__gif" src="#" alt="Gif tendencia" />
+					<div class="tendencias__contenedor__hashtag oculto">
+						<span class="tendencias__hashtags oculto"></span>
+					</div>
+				</div>
+				<div class="tendencias__contenedor__gif">
+					<img class="tendencias__gif" src="#" alt="Gif tendencia" />
+					<div class="tendencias__contenedor__hashtag oculto">
+						<span class="tendencias__hashtags oculto"></span>
+					</div>
+				</div>
+				<div class="tendencias__contenedor__gif">
+					<img class="tendencias__gif" src="#" alt="Gif tendencia" />
+					<div class="tendencias__contenedor__hashtag oculto">
+						<span class="tendencias__hashtags oculto"></span>
+					</div>
+				</div>
+				<div class="tendencias__contenedor__gif">
+					<img class="tendencias__gif" src="#" alt="Gif tendencia" />
+					<div class="tendencias__contenedor__hashtag oculto">
+						<span class="tendencias__hashtags oculto"></span>
+					</div>
+				</div>
+				<div class="tendencias__contenedor__gif">
+					<img class="tendencias__gif" src="#" alt="Gif tendencia" />
+					<div class="tendencias__contenedor__hashtag oculto">
+						<span class="tendencias__hashtags oculto"></span>
+					</div>
+				</div>
+				<div class="tendencias__contenedor__gif">
+					<img class="tendencias__gif" src="#" alt="Gif tendencia" />
+					<div class="tendencias__contenedor__hashtag oculto">
+						<span class="tendencias__hashtags oculto"></span>
+					</div>
+				</div>
+				<div class="tendencias__contenedor__gif">
+					<img class="tendencias__gif" src="#" alt="Gif tendencia" />
+					<div class="tendencias__contenedor__hashtag oculto">
+						<span class="tendencias__hashtags oculto"></span>
+					</div>
+				</div>
+				<div class="tendencias__contenedor__gif">
+					<img class="tendencias__gif" src="#" alt="Gif tendencia" />
+					<div class="tendencias__contenedor__hashtag oculto">
+						<span class="tendencias__hashtags oculto"></span>
+					</div>
+				</div>
+				<div class="tendencias__contenedor__gif">
+					<img class="tendencias__gif" src="#" alt="Gif tendencia" />
+					<div class="tendencias__contenedor__hashtag oculto">
+						<span class="tendencias__hashtags oculto"></span>
+					</div>
+				</div>
+				<div class="tendencias__contenedor__gif">
+					<img class="tendencias__gif" src="#" alt="Gif tendencia" />
+					<div class="tendencias__contenedor__hashtag oculto">
+						<span class="tendencias__hashtags oculto"></span>
+					</div>
+				</div>
+				<div class="tendencias__contenedor__gif">
+					<img class="tendencias__gif" src="#" alt="Gif tendencia" />
+					<div class="tendencias__contenedor__hashtag oculto">
+						<span class="tendencias__hashtags oculto"></span>
+					</div>
+				</div>
+				<div class="tendencias__contenedor__gif">
+					<img class="tendencias__gif" src="#" alt="Gif tendencia" />
+					<div class="tendencias__contenedor__hashtag oculto">
+						<span class="tendencias__hashtags oculto"></span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="oculto" id="resultados">
+			<section class="resultados">
+				<div class="resultados__titulo">
+					<h5 class="resultados__titulo__texto" id="resultados-titulo">Resultados</h5>
+				</div>
+				<div class="resultados__contenedor">
+					<div class="resultados__contenedor__gif">
+						<img class="resultados__gif" src="#" alt="Gif resultado de búsqueda" />
+						<div class="resultados__contenedor__hashtag oculto">
+							<span class="resultados__hashtags oculto"></span>
+						</div>
+					</div>
+					<div class="resultados__contenedor__gif">
+						<img class="resultados__gif" src="#" alt="Gif resultado de búsqueda" />
+						<div class="resultados__contenedor__hashtag oculto">
+							<span class="resultados__hashtags oculto"></span>
+						</div>
+					</div>
+					<div class="resultados__contenedor__gif">
+						<img class="resultados__gif" src="#" alt="Gif resultado de búsqueda" />
+						<div class="resultados__contenedor__hashtag oculto">
+							<span class="resultados__hashtags oculto"></span>
+						</div>
+					</div>
+					<div class="resultados__contenedor__gif">
+						<img class="resultados__gif" src="#" alt="Gif resultado de búsqueda" />
+						<div class="resultados__contenedor__hashtag oculto">
+							<span class="resultados__hashtags oculto"></span>
+						</div>
+					</div>
+					<div class="resultados__contenedor__gif">
+						<img class="resultados__gif" src="#" alt="Gif resultado de búsqueda" />
+						<div class="resultados__contenedor__hashtag oculto">
+							<span class="resultados__hashtags oculto"></span>
+						</div>
+					</div>
+					<div class="resultados__contenedor__gif">
+						<img class="resultados__gif" src="#" alt="Gif resultado de búsqueda" />
+						<div class="resultados__contenedor__hashtag oculto">
+							<span class="resultados__hashtags oculto"></span>
+						</div>
+					</div>
+					<div class="resultados__contenedor__gif">
+						<img class="resultados__gif" src="#" alt="Gif resultado de búsqueda" />
+						<div class="resultados__contenedor__hashtag oculto">
+							<span class="resultados__hashtags oculto"></span>
+						</div>
+					</div>
+					<div class="resultados__contenedor__gif">
+						<img class="resultados__gif" src="#" alt="Gif resultado de búsqueda" />
+						<div class="resultados__contenedor__hashtag oculto">
+							<span class="resultados__hashtags oculto"></span>
+						</div>
+					</div>
+					<div class="resultados__contenedor__gif">
+						<img class="resultados__gif" src="#" alt="Gif resultado de búsqueda" />
+						<div class="resultados__contenedor__hashtag oculto">
+							<span class="resultados__hashtags oculto"></span>
+						</div>
+					</div>
+					<div class="resultados__contenedor__gif">
+						<img class="resultados__gif" src="#" alt="Gif resultado de búsqueda" />
+						<div class="resultados__contenedor__hashtag oculto">
+							<span class="resultados__hashtags oculto"></span>
+						</div>
+					</div>
+					<div class="resultados__contenedor__gif">
+						<img class="resultados__gif" src="#" alt="Gif resultado de búsqueda" />
+						<div class="resultados__contenedor__hashtag oculto">
+							<span class="resultados__hashtags oculto"></span>
+						</div>
+					</div>
+					<div class="resultados__contenedor__gif">
+						<img class="resultados__gif" src="#" alt="Gif resultado de búsqueda" />
+						<div class="resultados__contenedor__hashtag oculto">
+							<span class="resultados__hashtags oculto"></span>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<section class="mis-guifos oculto">
+			<div class="mis-guifos__titulo">
+				<h5 class="mis-guifos__titulo__texto">Mis guifos</h5>
+			</div>
+			<div class="mis-guifos__contenedor">
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+				<div class="mis-guifos__contenedor__gif oculto">
+					<img class="mis-guifos__gif" src="#" alt="Gif creado por el usuario" />
+				</div>
+			</div>
+		</section>
+
+		<script src="scripts/script.js"></script>
+	</body>
+</html>
