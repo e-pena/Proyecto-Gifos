@@ -379,6 +379,7 @@ function subirGif() {
 			console.log(data);
 			if (data.meta.msg == 'OK') {
 				guardarGifEnLocalStorage(data.data.id);
+				nuevoGif = data.data.id;
 			} else {
 				alert('El gif no se pudo subir correctamente');
 			}
@@ -402,15 +403,22 @@ botonCerrar.forEach((element) => {
 
 // FUNCIÓN COPIAR ENLACE DEL GIF SUBIDO
 
-function copiarEnlaceDelGif(gif) {
-	gif = nuevoGif;
-	let aux = document.createElement('input');
-	aux.setAttribute('value', nuevoGif);
-	document.body.appendChild(aux);
-	aux.select();
-	document.execCommand('copy');
-	document.body.removeChild(aux);
-	console.log('texto copiado');
+function copiarEnlaceDelGif() {
+	fetch(`https://api.giphy.com/v1/gifs/${nuevoGif}?api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G`)
+		.then((response) => {
+			return response.json();
+		})
+		.then((data) => {
+			console.log(data);
+			let aux = document.createElement('input');
+			aux.setAttribute('value', data.data.images.original.url);
+			document.body.appendChild(aux);
+			aux.select();
+			document.execCommand('copy');
+			document.body.removeChild(aux);
+			console.log('texto copiado');
+			return data;
+		});
 }
 
 botonCopiarEnlace.addEventListener('click', copiarEnlaceDelGif);
