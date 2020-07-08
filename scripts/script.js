@@ -105,7 +105,7 @@ function verMisGuifos() {
 	seccionResultado.classList.add('class', 'oculto');
 	seccionBuscador.classList.toggle('oculto');
 	secciones.forEach(function (element) {
-		element.classList.toggle('oculto');
+		element.setAttribute('class', 'oculto');
 	});
 	seccionMisGuifos.classList.toggle('oculto');
 }
