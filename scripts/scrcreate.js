@@ -34,7 +34,8 @@ const contenedorDeMisGuifos = document.querySelectorAll('.mis-guifos__gif');
 const divDeMisGuifos = document.querySelectorAll('.mis-guifos__contenedor__gif');
 const timerCaptura = document.querySelector('.captura-timer');
 const timerVistaPrevia = document.querySelector('.previa-timer');
-const playCuadrados = document.querySelectorAll('.play__cuadrados');
+// const playCuadrados = document.querySelectorAll('.play__cuadrados');
+const playBarraContenido = document.querySelector('#play__barra__contenido');
 const subidaCuadrados = document.querySelectorAll('.carga__cuadrados');
 const imagenCamara = document.querySelector('#imagen-camara');
 const imagenGrabando = document.querySelector('#imagen-grabando');
@@ -288,20 +289,22 @@ function calcularTimerVistaPrevia() {
 	startTimerVistaPrevia();
 }
 
-// FUNCION BARRA DE TIEMPO VISTA PREVIA
+// FUNCION PARA UPLOAD DE PLAY
 
 function completarBarraDeTiempo() {
-	playCuadrados.forEach((element) => {
-		if (tema == 'night') {
-			setInterval(() => {
-				element.style.background = '#EE3EFE';
-			}, 1500);
+	let tiempoTotalDeGifCreado = localStorage.getItem('timer');
+	let tiempoDeGif = tiempoTotalDeGifCreado / 100 + 2;
+	var width = 0;
+	var id = setInterval(frame, tiempoDeGif);
+	function frame() {
+		if (width == 100) {
+			clearInterval(id);
+			completarBarraDeTiempo();
 		} else {
-			setInterval(() => {
-				element.style.background = '#F7C9F3';
-			}, 1500);
+			width++;
+			playBarraContenido.style.width = width + '%';
 		}
-	});
+	}
 }
 
 // FUNCION PARAR GRABACION

@@ -1459,7 +1459,7 @@ body {
 	width: 52em;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
-	align-items: center;
+	align-items: baseline;
 }
 
 .seccion-previa #previa .previa__abajo .previa-timer {
@@ -1494,32 +1494,6 @@ body {
 	margin-right: 4px;
 }
 
-.seccion-previa #previa .previa__abajo .play .play__contenedor {
-	background: #b4b4b4;
-	-webkit-box-shadow: inset 2px 2px 0 0 #fffcfc, inset -2px -2px 0 0 #000000;
-	box-shadow: inset 2px 2px 0 0 #fffcfc, inset -2px -2px 0 0 #000000;
-	width: 15em;
-	height: 1.5em;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	padding-left: 1px;
-	position: relative;
-	bottom: 2px;
-}
-
-.seccion-previa #previa .previa__abajo .play .play__contenedor .play__cuadrados {
-	width: 0.75em;
-	height: 1.25em;
-	background: #999999;
-	margin-left: 2px;
-	margin-top: 2px;
-}
-
 .seccion-previa #previa .previa__abajo .previa__botones {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1540,7 +1514,6 @@ body {
 	font-size: 1em;
 	padding: 0.5em 1.5em;
 	width: 9em;
-	height: 1.625em;
 	margin-left: 2em;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -1549,9 +1522,11 @@ body {
 	-webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 	box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 	height: 2.25em;
-	width: 9em;
 	padding: 0;
 	cursor: pointer;
+	position: relative;
+	left: 4em;
+	bottom: 0.5em;
 }
 
 .seccion-previa #previa .previa__abajo .previa__botones #btn-subir {
@@ -1573,6 +1548,9 @@ body {
 	width: 9em;
 	margin-left: 1em;
 	cursor: pointer;
+	position: relative;
+	left: 4em;
+	bottom: 0.5em;
 }
 
 .seccion-subiendo {
@@ -1919,6 +1897,36 @@ body {
 	left: 31em;
 	top: 4.55em;
 	cursor: pointer;
+}
+
+#play__barra__contenedor {
+	width: 15em;
+	height: 1.5em;
+	position: relative;
+	background: #b4b4b4;
+	-webkit-box-shadow: inset 2px 2px 0 0 #fffcfc, inset -2px -2px 0 0 #000000;
+	box-shadow: inset 2px 2px 0 0 #fffcfc, inset -2px -2px 0 0 #000000;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	padding-left: 1px;
+	position: relative;
+	bottom: 2px;
+	object-fit: cover;
+}
+
+#play__barra__contenido {
+	width: 10px;
+	height: 1.3em;
+	position: absolute;
+	background: #999999;
+	margin-left: 2px;
+	margin-top: 2px;
+	object-fit: cover;
 }
 
 .oculto {
