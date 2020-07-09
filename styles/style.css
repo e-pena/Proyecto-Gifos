@@ -69,6 +69,7 @@ body {
 .encabezado .encabezado__menu .encabezado__menu__logo {
 	position: relative;
 	left: 5.69em;
+	cursor: pointer;
 }
 
 .encabezado .encabezado__menu .encabezado__menu__contenedor {
@@ -127,6 +128,7 @@ body {
 	border: 1px solid #110038;
 	-webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 	box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+	cursor: pointer;
 }
 
 .encabezado
@@ -154,6 +156,7 @@ body {
 	align-items: center;
 	padding-bottom: 1.8em;
 	width: 8.4em;
+	cursor: pointer;
 }
 
 .encabezado
@@ -175,6 +178,7 @@ body {
 	background-color: transparent;
 	border: none;
 	height: 2.25em;
+	cursor: pointer;
 }
 
 .encabezado
@@ -186,6 +190,7 @@ body {
 	em {
 	text-decoration: underline;
 	font-style: normal;
+	cursor: pointer;
 }
 
 .encabezado
@@ -199,6 +204,7 @@ body {
 	box-sizing: border-box;
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
+	cursor: pointer;
 }
 
 .encabezado
@@ -212,6 +218,7 @@ body {
 	box-sizing: border-box;
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
+	cursor: pointer;
 }
 
 .encabezado
@@ -225,6 +232,7 @@ body {
 	box-sizing: border-box;
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
+	cursor: pointer;
 }
 
 .encabezado
@@ -238,6 +246,7 @@ body {
 	box-sizing: border-box;
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
+	cursor: pointer;
 }
 
 .encabezado
@@ -250,6 +259,7 @@ body {
 	box-sizing: border-box;
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
+	cursor: pointer;
 }
 
 .encabezado
@@ -259,6 +269,7 @@ body {
 	.contenedor__botones__boton
 	.boton-3:active {
 	color: #d3d3d3;
+	cursor: pointer;
 }
 
 .encabezado
@@ -270,6 +281,7 @@ body {
 	margin-left: -0.5em;
 	width: 2.25em;
 	margin-top: -0.5em;
+	cursor: pointer;
 }
 
 .encabezado
@@ -280,6 +292,7 @@ body {
 	.flecha
 	i {
 	margin-left: -0.3em;
+	cursor: pointer;
 }
 
 .encabezado
@@ -328,6 +341,7 @@ body {
 	margin-top: 0.6em;
 	padding: 0.5em 1.62em;
 	height: 2.25em;
+	cursor: pointer;
 }
 
 .encabezado
@@ -340,6 +354,7 @@ body {
 	em {
 	text-decoration: underline;
 	font-style: normal;
+	cursor: pointer;
 }
 
 .encabezado
@@ -370,6 +385,7 @@ body {
 	margin-top: 0.6em;
 	padding: 0.5em 1.62em;
 	height: 2.25em;
+	cursor: pointer;
 }
 
 .encabezado
@@ -382,6 +398,7 @@ body {
 	em {
 	font-style: normal;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 .encabezado .encabezado__contenedor {
@@ -449,11 +466,13 @@ body {
 	padding-bottom: 0.5em;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+	cursor: pointer;
 }
 
 #btn-buscar button i {
 	position: relative;
 	right: 0.5em;
+	cursor: pointer;
 }
 
 .input-inactivo {
@@ -479,6 +498,7 @@ body {
 	box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 	outline-offset: -2px;
 	background-color: #f7c9f3;
+	cursor: pointer;
 }
 
 #btn-buscar:active {
@@ -488,6 +508,7 @@ body {
 	background-color: #e6bbe2;
 	-webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
 	box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+	cursor: pointer;
 }
 
 .busqueda__opciones {
@@ -564,7 +585,6 @@ body {
 	text-align: center;
 	text-decoration: none;
 	color: #110038;
-	font-size: 1em;
 	padding: 0.5em 1.5em;
 	width: 9em;
 	height: 1.625em;
@@ -581,10 +601,11 @@ body {
 	-webkit-box-flex: 1;
 	-ms-flex-positive: 1;
 	flex-grow: 1;
-	width: -webkit-fit-content;
-	width: -moz-fit-content;
-	width: fit-content;
+	min-width: -webkit-fit-content;
+	min-width: -moz-fit-content;
+	min-width: fit-content;
 	color: #ffffff;
+	cursor: pointer;
 }
 
 .sugerencias {
@@ -674,6 +695,7 @@ body {
 	position: relative;
 	bottom: 3.3em;
 	left: 1em;
+	cursor: pointer;
 }
 
 .sugerencias
@@ -755,6 +777,7 @@ body {
 	color: #ffffff;
 	margin-left: 0.2em;
 	font-weight: bold;
+	overflow: hidden;
 }
 
 .tendencias__gif {
@@ -1026,6 +1049,7 @@ body {
 	box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 	height: 2.25em;
 	width: 8.375em;
+	cursor: pointer;
 }
 
 .crear-guifo #cartel-inicial .cartel-inicial__botones #btn-comenzar {
@@ -1046,6 +1070,7 @@ body {
 	height: 2.25em;
 	width: 8.375em;
 	margin-left: 1em;
+	cursor: pointer;
 }
 
 .seccion-precaptura {
@@ -1156,6 +1181,7 @@ body {
 	box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 	height: 2.25em;
 	width: 2.25em;
+	cursor: pointer;
 }
 
 .seccion-precaptura #precaptura .precaptura__botones #btn-capturar-camara img {
@@ -1164,6 +1190,7 @@ body {
 	align-self: center;
 	position: relative;
 	right: 7px;
+	cursor: pointer;
 }
 
 .seccion-precaptura #precaptura .precaptura__botones #btn-capturar-texto {
@@ -1184,6 +1211,7 @@ body {
 	height: 2.25em;
 	width: 8.375em;
 	margin-left: 0;
+	cursor: pointer;
 }
 
 .seccion-captura {
@@ -1309,6 +1337,7 @@ body {
 	position: relative;
 	left: 4px;
 	top: 4px;
+	cursor: pointer;
 }
 
 .seccion-captura #captura .captura__abajo .captura__botones #btn-grabar-icono img {
@@ -1317,6 +1346,7 @@ body {
 	align-self: center;
 	position: relative;
 	right: 9px;
+	cursor: pointer;
 }
 
 .seccion-captura #captura .captura__abajo .captura__botones #btn-listo {
@@ -1338,6 +1368,7 @@ body {
 	width: 9em;
 	margin-left: 0;
 	color: #ffffff;
+	cursor: pointer;
 }
 
 .seccion-previa {
@@ -1520,6 +1551,7 @@ body {
 	height: 2.25em;
 	width: 9em;
 	padding: 0;
+	cursor: pointer;
 }
 
 .seccion-previa #previa .previa__abajo .previa__botones #btn-subir {
@@ -1540,6 +1572,7 @@ body {
 	height: 2.25em;
 	width: 9em;
 	margin-left: 1em;
+	cursor: pointer;
 }
 
 .seccion-subiendo {
@@ -1837,6 +1870,7 @@ body {
 	height: 2.25em;
 	width: 16em;
 	margin-bottom: 0.875em;
+	cursor: pointer;
 }
 
 .seccion-subida-exitosa
@@ -1861,6 +1895,7 @@ body {
 	box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 	height: 2.25em;
 	width: 16em;
+	cursor: pointer;
 }
 
 .seccion-subida-exitosa #subida-exitosa #btn-finalizado {
@@ -1883,9 +1918,9 @@ body {
 	position: relative;
 	left: 31em;
 	top: 4.55em;
+	cursor: pointer;
 }
 
 .oculto {
 	display: none;
 }
-/*# sourceMappingURL=style.css.map */

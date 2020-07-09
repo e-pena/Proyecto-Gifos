@@ -40,6 +40,8 @@ const imagenCamara = document.querySelector('#imagen-camara');
 const imagenGrabando = document.querySelector('#imagen-grabando');
 
 let recorder = null;
+let camaraEncendidaPrecaptura;
+let camaraEncendidaCaptura;
 let tema = localStorage.getItem('tema');
 let blob = null;
 let nuevoGif = null;
@@ -65,16 +67,20 @@ function traerGifDelLocalStorage() {
 		arrayDeMisGuifos = JSON.parse(grupoDeGifsBajados);
 		for (let i = 0; i < arrayDeMisGuifos.length; i++) {
 			const element = arrayDeMisGuifos[i];
-			fetch(`https://api.giphy.com/v1/gifs/${element}?api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G`)
-				.then((response) => {
-					return response.json();
-				})
-				.then((data) => {
-					console.log(data);
-					contenedorDeMisGuifos[i].setAttribute('src', data.data.images.original.url);
-					divDeMisGuifos[i].classList.remove('oculto');
-					return data;
-				});
+			try {
+				fetch(`https://api.giphy.com/v1/gifs/${element}?api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G`)
+					.then((response) => {
+						return response.json();
+					})
+					.then((data) => {
+						console.log(data);
+						contenedorDeMisGuifos[i].setAttribute('src', data.data.images.original.url);
+						divDeMisGuifos[i].classList.remove('oculto');
+						return data;
+					});
+			} catch (error) {
+				return console.log(error);
+			}
 		}
 	}
 }
@@ -178,6 +184,7 @@ navigator.mediaDevices
 		video: true,
 	})
 	.then(function (stream) {
+		camaraEncendidaPrecaptura = stream;
 		recorder = RecordRTC(stream, {
 			type: 'gif',
 			frameRate: 1,
@@ -232,6 +239,7 @@ navigator.mediaDevices
 		video: true,
 	})
 	.then(function (stream) {
+		camaraEncendidaCaptura = stream;
 		recorder = RecordRTC(stream, {
 			type: 'gif',
 			frameRate: 1,
@@ -365,25 +373,31 @@ function subirGifSeccion() {
 }
 
 function subirGif() {
+	camaraEncendidaPrecaptura.stop();
+	camaraEncendidaCaptura.stop();
 	subirGifSeccion();
 	let form = new FormData();
 	form.append('file', blob, 'file.gif');
-	fetch('https://upload.giphy.com/v1/gifs?api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G', {
-		method: 'POST',
-		body: form,
-	})
-		.then((response) => {
-			return response.json();
+	try {
+		fetch('https://upload.giphy.com/v1/gifs?api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G', {
+			method: 'POST',
+			body: form,
 		})
-		.then((data) => {
-			console.log(data);
-			if (data.meta.msg == 'OK') {
-				guardarGifEnLocalStorage(data.data.id);
-				nuevoGif = data.data.id;
-			} else {
-				alert('El gif no se pudo subir correctamente');
-			}
-		});
+			.then((response) => {
+				return response.json();
+			})
+			.then((data) => {
+				console.log(data);
+				if (data.meta.msg == 'OK') {
+					guardarGifEnLocalStorage(data.data.id);
+					nuevoGif = data.data.id;
+				} else {
+					alert('El gif no se pudo subir correctamente');
+				}
+			});
+	} catch (error) {
+		return console.log(error);
+	}
 }
 
 botonSubirGif.addEventListener('click', subirGif);
@@ -404,21 +418,25 @@ botonCerrar.forEach((element) => {
 // FUNCIÓN COPIAR ENLACE DEL GIF SUBIDO
 
 function copiarEnlaceDelGif() {
-	fetch(`https://api.giphy.com/v1/gifs/${nuevoGif}?api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G`)
-		.then((response) => {
-			return response.json();
-		})
-		.then((data) => {
-			console.log(data);
-			let aux = document.createElement('input');
-			aux.setAttribute('value', data.data.images.original.url);
-			document.body.appendChild(aux);
-			aux.select();
-			document.execCommand('copy');
-			document.body.removeChild(aux);
-			console.log('texto copiado');
-			return data;
-		});
+	try {
+		fetch(`https://api.giphy.com/v1/gifs/${nuevoGif}?api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G`)
+			.then((response) => {
+				return response.json();
+			})
+			.then((data) => {
+				console.log(data);
+				let aux = document.createElement('input');
+				aux.setAttribute('value', data.data.images.original.url);
+				document.body.appendChild(aux);
+				aux.select();
+				document.execCommand('copy');
+				document.body.removeChild(aux);
+				console.log('texto copiado');
+				return data;
+			});
+	} catch (error) {
+		return console.log(error);
+	}
 }
 
 botonCopiarEnlace.addEventListener('click', copiarEnlaceDelGif);

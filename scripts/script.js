@@ -83,16 +83,20 @@ function traerGifDelLocalStorage() {
 		arrayDeMisGuifos = JSON.parse(grupoDeGifsBajados);
 		for (let i = 0; i < arrayDeMisGuifos.length; i++) {
 			const element = arrayDeMisGuifos[i];
-			fetch(`https://api.giphy.com/v1/gifs/${element}?api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G`)
-				.then((response) => {
-					return response.json();
-				})
-				.then((data) => {
-					console.log(data);
-					contenedorDeMisGuifos[i].setAttribute('src', data.data.images.original.url);
-					divDeMisGuifos[i].classList.remove('oculto');
-					return data;
-				});
+			try {
+				fetch(`https://api.giphy.com/v1/gifs/${element}?api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G`)
+					.then((response) => {
+						return response.json();
+					})
+					.then((data) => {
+						console.log(data);
+						contenedorDeMisGuifos[i].setAttribute('src', data.data.images.original.url);
+						divDeMisGuifos[i].classList.remove('oculto');
+						return data;
+					});
+			} catch (error) {
+				return console.error(error);
+			}
 		}
 	}
 }
@@ -183,33 +187,40 @@ function comprobarTamañoGif(gif, contenedorGif) {
 		contenedorGif.classList.add('doble-gif');
 		gifObtenido.width = 592;
 	} else {
+		contenedorGif.classList.remove('doble-gif');
 		gifObtenido.width = 288;
 	}
 }
 
 // FUNCIÓN PARA LA BARRA DE BUSQUEDA
 function obtenerResultadosDeBusqueda(busqueda) {
-	const response = fetch(`https://api.giphy.com/v1/gifs/search?q=${busqueda}&api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G`)
-		.then((response) => {
-			return response.json();
-		})
-		.then((data) => {
-			console.log(data);
-			for (let i = 0; i < 20; i++) {
-				const element = data.data[i];
-				gifResultado[i].setAttribute('src', element.images.original.url);
-				gifResultado[i].setAttribute('alt', element.title);
-				comprobarTamañoGif(element.images.original, gifResultadoContenedor[i]);
-				let tagEntero = element.slug;
-				let tag = tagEntero.split('-');
-				resultadosHashtags[i].innerText = `#${tag[0]} #${tag[1]} #${tag[2]}`;
-			}
-			return data;
-		})
-		.catch((error) => {
-			return error;
-		});
-	return response;
+	try {
+		const response = fetch(
+			`https://api.giphy.com/v1/gifs/search?q=${busqueda}&api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G`
+		)
+			.then((response) => {
+				return response.json();
+			})
+			.then((data) => {
+				console.log(data);
+				for (let i = 0; i < 20; i++) {
+					const element = data.data[i];
+					gifResultado[i].setAttribute('src', element.images.original.url);
+					gifResultado[i].setAttribute('alt', element.title);
+					comprobarTamañoGif(element.images.original, gifResultadoContenedor[i]);
+					let tagEntero = element.slug;
+					let tag = tagEntero.split('-');
+					resultadosHashtags[i].innerText = `#${tag[0]} #${tag[1]} #${tag[2]}`;
+				}
+				return data;
+			})
+			.catch((error) => {
+				return error;
+			});
+		return response;
+	} catch (error) {
+		return console.error(error);
+	}
 }
 
 function clickEnBuscar(e) {
@@ -245,37 +256,41 @@ function cortarTitulo(tituloRecibido) {
 }
 
 function mostrarSugerenciasYTendencias() {
-	const response = fetch(
-		'https://api.giphy.com/v1/gifs/trending?api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G&limit=25&rating=G'
-	)
-		.then((response) => {
-			return response.json();
-		})
-		.then((data) => {
-			console.log(data);
-			for (let i = 0; i < 4; i++) {
-				const element = data.data[i];
-				gifSugerencia[i].setAttribute('src', element.images.downsized_medium.url);
-				gifSugerencia[i].setAttribute('alt', element.title);
-				let titulo = cortarTitulo(element.title);
-				gifTitulo[i].innerText = `#${titulo}`;
-				tituloVerMas[i].innerText = element.title;
-			}
-			for (let i = 4; i < 16; i++) {
-				const element = data.data[i];
-				gifTendencia[i - 4].setAttribute('src', element.images.downsized_medium.url);
-				gifTendencia[i - 4].setAttribute('alt', element.title);
-				comprobarTamañoGif(element.images.downsized_medium, gifTendenciaContenedor[i - 4]);
-				let tagEntero = element.slug;
-				let tag = tagEntero.split('-');
-				tendenciasHashtags[i - 4].innerText = `#${tag[0]} #${tag[1]} #${tag[2]}`;
-			}
-			return data;
-		})
-		.catch((error) => {
-			return error;
-		});
-	return response;
+	try {
+		const response = fetch(
+			'https://api.giphy.com/v1/gifs/trending?api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G&limit=25&rating=G'
+		)
+			.then((response) => {
+				return response.json();
+			})
+			.then((data) => {
+				console.log(data);
+				for (let i = 0; i < 4; i++) {
+					const element = data.data[i];
+					gifSugerencia[i].setAttribute('src', element.images.downsized_medium.url);
+					gifSugerencia[i].setAttribute('alt', element.title);
+					let titulo = cortarTitulo(element.title);
+					gifTitulo[i].innerText = `#${titulo}`;
+					tituloVerMas[i].innerText = element.title;
+				}
+				for (let i = 4; i < 16; i++) {
+					const element = data.data[i];
+					gifTendencia[i - 4].setAttribute('src', element.images.downsized_medium.url);
+					gifTendencia[i - 4].setAttribute('alt', element.title);
+					comprobarTamañoGif(element.images.downsized_medium, gifTendenciaContenedor[i - 4]);
+					let tagEntero = element.slug;
+					let tag = tagEntero.split('-');
+					tendenciasHashtags[i - 4].innerText = `#${tag[0]} #${tag[1]} #${tag[2]}`;
+				}
+				return data;
+			})
+			.catch((error) => {
+				return error;
+			});
+		return response;
+	} catch (error) {
+		return console.error(error);
+	}
 }
 
 mostrarSugerenciasYTendencias();
@@ -283,12 +298,16 @@ mostrarSugerenciasYTendencias();
 // BOTÓN PARA CERRAR SUGERENCIAS (Y PONER OTRAS)
 
 async function cambiarSugerencias() {
-	const response = fetch(
-		'https://api.giphy.com/v1/gifs/trending?api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G&limit=25&rating=G'
-	).then((response) => {
-		return response.json();
-	});
-	return response;
+	try {
+		const response = fetch(
+			'https://api.giphy.com/v1/gifs/trending?api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G&limit=25&rating=G'
+		).then((response) => {
+			return response.json();
+		});
+		return response;
+	} catch (error) {
+		return console.error(error);
+	}
 }
 
 botonCierreSugerencias[0].addEventListener('click', function () {
@@ -399,23 +418,27 @@ botonVerMasSugerencias[3].addEventListener('click', function () {
 // MOSTRAR SUGERENCIAS DE LA BARRA DE BÚSQUEDA
 
 function sugerirResultados(busqueda) {
-	const response = fetch(
-		`https://api.giphy.com/v1/gifs/search/tags?q=${busqueda}&api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G`
-	)
-		.then((response) => {
-			return response.json();
-		})
-		.then((data) => {
-			console.log(data);
-			for (let i = 0; i < 3; i++) {
-				const element = data.data[i];
-				opcionesDeBusquedaMostradas[i].innerText = `${element.name}`;
-			}
-		})
-		.catch((error) => {
-			return error;
-		});
-	return response;
+	try {
+		const response = fetch(
+			`https://api.giphy.com/v1/gifs/search/tags?q=${busqueda}&api_key=zuNQGVdu9pjM2UXqSzO9bZYhRIk3Fz2G`
+		)
+			.then((response) => {
+				return response.json();
+			})
+			.then((data) => {
+				console.log(data);
+				for (let i = 0; i < 3; i++) {
+					const element = data.data[i];
+					opcionesDeBusquedaMostradas[i].innerText = `${element.name}`;
+				}
+			})
+			.catch((error) => {
+				return error;
+			});
+		return response;
+	} catch (error) {
+		return console.log(error);
+	}
 }
 
 buscadorDeGif.addEventListener('input', () => {
