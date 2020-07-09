@@ -46,18 +46,20 @@ let tema = localStorage.getItem('tema');
 let blob = null;
 let nuevoGif = null;
 let arrayDeMisGuifos = [];
+let inicioTimer;
+let finTimer;
 
 var timerAndando = setInterval(() => {
 	var t = calcularTimer(inicioTimer);
-	timerCaptura.innerHTML = `${t.horas}:${t.minutos}:${t.segundos}:${t.centesimas}`;
-}, 157);
+	timerCaptura.innerHTML = `${t.minutos}:${t.segundos}:${t.centesimas}`;
+}, 436);
 
 var timerAndandoVistaPrevia = setInterval(() => {
 	var tv = calcularTimerVistaPrevia(inicioTimer);
 	if (tv != undefined) {
-		timerVistaPrevia.innerHTML = `${tv.horas}:${tv.minutos}:${tv.segundos}:${tv.centesimas}`;
+		timerVistaPrevia.innerHTML = `${tv.minutos}:${tv.segundos}:${tv.centesimas}`;
 	}
-}, 157);
+}, 436);
 
 // MOSTRAR GIFS EN MIS GUIFOS
 
@@ -202,10 +204,8 @@ navigator.mediaDevices
 
 // FUNCION TIMER
 
-let inicioTimer;
-let finTimer;
-
 function startTimer() {
+	timerCaptura.innerHTML = '00:00:00';
 	inicioTimer = new Date();
 	timerAndando;
 }
@@ -216,8 +216,7 @@ function calcularTimer() {
 	let centesimas = ('0' + Math.floor(diferenciaTiempos % 100)).slice(-2);
 	let segundos = ('0' + Math.floor((diferenciaTiempos / 1000) % 60)).slice(-2);
 	let minutos = ('0' + Math.floor((diferenciaTiempos / 1000 / 60) % 60)).slice(-2);
-	let horas = ('0' + Math.floor((diferenciaTiempos / 1000 / 60 / 60) % 24)).slice(-2);
-	let tiempo = { centesimas, segundos, minutos, horas };
+	let tiempo = { centesimas, segundos, minutos };
 	localStorage.setItem('timer', diferenciaTiempos);
 	return tiempo;
 }
@@ -283,8 +282,7 @@ function calcularTimerVistaPrevia() {
 		let centesimas = ('0' + Math.floor(diferenciaTiempos % 100)).slice(-2);
 		let segundos = ('0' + Math.floor((diferenciaTiempos / 1000) % 60)).slice(-2);
 		let minutos = ('0' + Math.floor((diferenciaTiempos / 1000 / 60) % 60)).slice(-2);
-		let horas = ('0' + Math.floor((diferenciaTiempos / 1000 / 60 / 60) % 24)).slice(-2);
-		let tiempo = { centesimas: centesimas, segundos: segundos, minutos: minutos, horas: horas };
+		let tiempo = { centesimas: centesimas, segundos: segundos, minutos: minutos };
 		return tiempo;
 	}
 	startTimerVistaPrevia();
@@ -326,10 +324,32 @@ function pararGrabación() {
 	completarBarraDeTiempo();
 }
 
+// FUNCIONES PARA REINICIAR EL TIMER
+
+function resetTimerAndando() {
+	clearInterval(timerAndando);
+	timerAndando = setInterval(() => {
+		var t = calcularTimer(inicioTimer);
+		timerCaptura.innerHTML = `${t.minutos}:${t.segundos}:${t.centesimas}`;
+	}, 436);
+}
+
+function resetTimerAndandoVistaPrevia() {
+	clearInterval(timerAndandoVistaPrevia);
+	timerAndandoVistaPrevia = setInterval(() => {
+		var tv = calcularTimerVistaPrevia(inicioTimer);
+		if (tv != undefined) {
+			timerVistaPrevia.innerHTML = `${tv.minutos}:${tv.segundos}:${tv.centesimas}`;
+		}
+	}, 436);
+}
+
 // REPETIR GRABACIÓN
 
 function repetirGrabacion() {
 	recorder.reset();
+	resetTimerAndando();
+	resetTimerAndandoVistaPrevia();
 	startTimer();
 	seccionVistaPrevia.classList.toggle('oculto');
 	seccionCaptura.classList.toggle('oculto');
