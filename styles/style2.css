@@ -1,5 +1,5 @@
 html {
-	background-color: #110038;
+	background-color: #060013;
 }
 
 body {
@@ -33,8 +33,8 @@ body {
 }
 
 .encabezado .encabezado__barra-superior {
-	background-image: -webkit-gradient(linear, right top, left top, from(#ee3efe), to(#2e32fb));
-	background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+	background-image: -webkit-gradient(linear, right top, left top, from(#9906a7), to(#2e32fb));
+	background-image: linear-gradient(270deg, #9906a7 0%, #2e32fb 100%);
 	margin: 1px;
 	font-size: 0.75em;
 	padding: 0.25em 0em 0.25em 0.5em;
@@ -122,11 +122,12 @@ body {
 	margin-left: 2em;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	background-color: #ee3efe;
+	background-color: #9906a7;
 	border: 1px solid #110038;
 	-webkit-box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 	box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -145,7 +146,7 @@ body {
 	margin-left: 2em;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	background-color: #ee3efe;
+	background-color: #9906a7;
 	border: 1px solid #110038;
 	-webkit-box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 	box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
@@ -155,6 +156,7 @@ body {
 	padding-bottom: 1.8em;
 	width: 8.4em;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -177,6 +179,7 @@ body {
 	border: none;
 	height: 2.25em;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -189,6 +192,7 @@ body {
 	text-decoration: underline;
 	font-style: normal;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -206,6 +210,7 @@ body {
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -223,6 +228,7 @@ body {
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -240,6 +246,7 @@ body {
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -257,6 +264,7 @@ body {
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -270,6 +278,7 @@ body {
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -281,6 +290,7 @@ body {
 	:active {
 	color: #110038;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -293,6 +303,7 @@ body {
 	width: 2.25em;
 	margin-top: -0.5em;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -304,6 +315,7 @@ body {
 	i {
 	margin-left: -0.3em;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -354,6 +366,7 @@ body {
 	height: 2.25em;
 	color: #110038;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -366,6 +379,7 @@ body {
 	em {
 	font-style: normal;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -397,6 +411,7 @@ body {
 	padding: 0.5em 1.62em;
 	height: 2.25em;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado
@@ -410,6 +425,7 @@ body {
 	text-decoration: underline;
 	font-style: normal;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .encabezado .encabezado__contenedor {
@@ -427,8 +443,8 @@ body {
 	font-size: 0.875em;
 	font-weight: bold;
 	color: #ffffff;
-	background-image: -webkit-gradient(linear, right top, left top, from(#ee3efe), to(#2e32fb));
-	background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+	background-image: -webkit-gradient(linear, right top, left top, from(#9906a7), to(#2e32fb));
+	background-image: linear-gradient(270deg, #9906a7 0%, #2e32fb 100%);
 	padding-left: 0.4em;
 	position: relative;
 	left: 2px;
@@ -478,12 +494,14 @@ body {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 #btn-buscar button i {
 	position: relative;
 	right: 0.5em;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .input-inactivo {
@@ -497,7 +515,7 @@ body {
 	color: #ffffff;
 	-webkit-box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 	box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
-	background-color: #ee3efe;
+	background-color: #9906a7;
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
 }
@@ -510,6 +528,7 @@ body {
 	outline-offset: -2px;
 	background-color: #ce36db;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 #btn-buscar:active {
@@ -520,6 +539,7 @@ body {
 	-webkit-box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
 	box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .busqueda__opciones {
@@ -622,6 +642,7 @@ body {
 	min-width: fit-content;
 	color: #ffffff;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .sugerencias {
@@ -647,8 +668,8 @@ body {
 }
 
 .sugerencias .sugerencias__gran-contenedor .sugerencias__contenedor .sugerencias__contenedor__encabezado {
-	background-image: -webkit-gradient(linear, right top, left top, from(#ee3efe), to(#2e32fb));
-	background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+	background-image: -webkit-gradient(linear, right top, left top, from(#9906a7), to(#2e32fb));
+	background-image: linear-gradient(270deg, #9906a7 0%, #2e32fb 100%);
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -771,8 +792,8 @@ body {
 }
 
 .tendencias .tendencias__contenedor .tendencias__contenedor__hashtag {
-	background-image: -webkit-gradient(linear, right top, left top, from(#ee3efe), to(#2e32fb));
-	background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+	background-image: -webkit-gradient(linear, right top, left top, from(#9906a7), to(#2e32fb));
+	background-image: linear-gradient(270deg, #9906a7 0%, #2e32fb 100%);
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -857,8 +878,8 @@ body {
 }
 
 .resultados__contenedor__hashtag {
-	background-image: -webkit-gradient(linear, right top, left top, from(#ee3efe), to(#2e32fb));
-	background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+	background-image: -webkit-gradient(linear, right top, left top, from(#9906a7), to(#2e32fb));
+	background-image: linear-gradient(270deg, #9906a7 0%, #2e32fb 100%);
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -917,8 +938,8 @@ body {
 }
 
 .mis-guifos .mis-guifos__contenedor .mis-guifos__contenedor__hashtag {
-	background-image: -webkit-gradient(linear, right top, left top, from(#ee3efe), to(#2e32fb));
-	background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+	background-image: -webkit-gradient(linear, right top, left top, from(#9906a7), to(#2e32fb));
+	background-image: linear-gradient(270deg, #9906a7 0%, #2e32fb 100%);
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -986,8 +1007,8 @@ body {
 }
 
 .crear-guifo #cartel-inicial .cartel-inicial__barra-superior {
-	background-image: -webkit-gradient(linear, right top, left top, from(#ee3efe), to(#2e32fb));
-	background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+	background-image: -webkit-gradient(linear, right top, left top, from(#9906a7), to(#2e32fb));
+	background-image: linear-gradient(270deg, #9906a7 0%, #2e32fb 100%);
 	margin: 5px;
 	font-size: 0.75em;
 	padding: 0.25em 0em 0.25em 0.5em;
@@ -1071,6 +1092,7 @@ body {
 	width: 8.375em;
 	color: #ffffff;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .crear-guifo #cartel-inicial .cartel-inicial__botones #btn-comenzar {
@@ -1084,7 +1106,7 @@ body {
 	margin-left: 2em;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	background-color: #ee3efe;
+	background-color: #9906a7;
 	border: 1px solid #110038;
 	-webkit-box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 	box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
@@ -1093,6 +1115,7 @@ body {
 	margin-left: 1em;
 	color: #ffffff;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 #btn-cancelar:hover {
@@ -1116,6 +1139,7 @@ body {
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .seccion-precaptura {
@@ -1160,8 +1184,8 @@ body {
 	margin: 5px;
 	width: 53.3em;
 	height: 1.4em;
-	background-image: -webkit-gradient(linear, right top, left top, from(#ee3efe), to(#2e32fb));
-	background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+	background-image: -webkit-gradient(linear, right top, left top, from(#9906a7), to(#2e32fb));
+	background-image: linear-gradient(270deg, #9906a7 0%, #2e32fb 100%);
 }
 
 .seccion-precaptura #precaptura .precaptura__header .precaptura__barra-superior {
@@ -1220,13 +1244,14 @@ body {
 	margin-left: 2em;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	background-color: #ee3efe;
+	background-color: #9906a7;
 	border: 1px solid #110038;
 	-webkit-box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 	box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 	height: 2.25em;
 	width: 2.25em;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .seccion-precaptura #precaptura .precaptura__botones #btn-capturar-camara img {
@@ -1236,6 +1261,7 @@ body {
 	position: relative;
 	right: 7px;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .seccion-precaptura #precaptura .precaptura__botones #btn-capturar-texto {
@@ -1249,7 +1275,7 @@ body {
 	margin-left: 2em;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	background-color: #ee3efe;
+	background-color: #9906a7;
 	border: 1px solid #110038;
 	-webkit-box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 	box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
@@ -1258,6 +1284,7 @@ body {
 	margin-left: 0;
 	color: #ffffff;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .seccion-captura {
@@ -1302,8 +1329,8 @@ body {
 	margin: 5px;
 	width: 53.3em;
 	height: 1.4em;
-	background-image: -webkit-gradient(linear, right top, left top, from(#ee3efe), to(#2e32fb));
-	background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+	background-image: -webkit-gradient(linear, right top, left top, from(#9906a7), to(#2e32fb));
+	background-image: linear-gradient(270deg, #9906a7 0%, #2e32fb 100%);
 }
 
 .seccion-captura #captura .captura__header .captura__barra-superior {
@@ -1374,16 +1401,17 @@ body {
 	margin-left: 2em;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	background-color: #ff6161;
+	background-color: #9906a7;
 	border: 1px solid #110038;
-	-webkit-box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
-	box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+	-webkit-box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
+	box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 	height: 2.25em;
 	width: 2.25em;
 	position: relative;
 	left: 4px;
 	top: 4px;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .seccion-captura #captura .captura__abajo .captura__botones #btn-grabar-icono img {
@@ -1393,6 +1421,7 @@ body {
 	position: relative;
 	right: 9px;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .seccion-captura #captura .captura__abajo .captura__botones #btn-listo {
@@ -1406,15 +1435,16 @@ body {
 	margin-left: 2em;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	background-color: #ff6161;
+	background-color: #9906a7;
 	border: 1px solid #110038;
-	-webkit-box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
-	box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
+	-webkit-box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
+	box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 	height: 2.25em;
 	width: 9em;
 	margin-left: 0;
 	color: #ffffff;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .seccion-previa {
@@ -1459,8 +1489,8 @@ body {
 	margin: 5px;
 	width: 53.3em;
 	height: 1.4em;
-	background-image: -webkit-gradient(linear, right top, left top, from(#ee3efe), to(#2e32fb));
-	background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+	background-image: -webkit-gradient(linear, right top, left top, from(#9906a7), to(#2e32fb));
+	background-image: linear-gradient(270deg, #9906a7 0%, #2e32fb 100%);
 }
 
 .seccion-previa #previa .previa__header .previa__barra-superior {
@@ -1573,6 +1603,7 @@ body {
 	position: relative;
 	left: 4em;
 	bottom: 0.5em;
+	border-radius: 10px;
 }
 
 .seccion-previa #previa .previa__abajo .previa__botones #btn-subir {
@@ -1585,7 +1616,7 @@ body {
 	margin-left: 2em;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	background-color: #ee3efe;
+	background-color: #9906a7;
 	border: 1px solid #110038;
 	-webkit-box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 	box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
@@ -1596,6 +1627,7 @@ body {
 	position: relative;
 	left: 4em;
 	bottom: 0.5em;
+	border-radius: 10px;
 }
 
 #btn-repetir:hover {
@@ -1619,6 +1651,7 @@ body {
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .seccion-subiendo {
@@ -1663,8 +1696,8 @@ body {
 	margin: 5px;
 	width: 53.3em;
 	height: 1.4em;
-	background-image: -webkit-gradient(linear, right top, left top, from(#ee3efe), to(#2e32fb));
-	background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+	background-image: -webkit-gradient(linear, right top, left top, from(#9906a7), to(#2e32fb));
+	background-image: linear-gradient(270deg, #9906a7 0%, #2e32fb 100%);
 }
 
 .seccion-subiendo #subiendo .subiendo__header .subiendo__barra-superior {
@@ -1770,6 +1803,7 @@ body {
 	bottom: 1em;
 	left: 41.8em;
 	color: #ffffff;
+	border-radius: 10px;
 }
 
 #btn-cancelar-subida:hover {
@@ -1792,6 +1826,7 @@ body {
 	color: #ffffff;
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
+	border-radius: 10px;
 }
 
 .seccion-subida-exitosa {
@@ -1836,8 +1871,8 @@ body {
 	margin: 5px;
 	width: 44.5em;
 	height: 1.4em;
-	background-image: -webkit-gradient(linear, right top, left top, from(#ee3efe), to(#2e32fb));
-	background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+	background-image: -webkit-gradient(linear, right top, left top, from(#9906a7), to(#2e32fb));
+	background-image: linear-gradient(270deg, #9906a7 0%, #2e32fb 100%);
 }
 
 .seccion-subida-exitosa #subida-exitosa .subida-exitosa__header .subida-exitosa__barra-superior {
@@ -1941,6 +1976,7 @@ body {
 	margin-bottom: 0.875em;
 	color: #ffffff;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .seccion-subida-exitosa
@@ -1967,6 +2003,7 @@ body {
 	width: 16em;
 	color: #ffffff;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 .seccion-subida-exitosa #btn-finalizado {
@@ -1980,7 +2017,7 @@ body {
 	margin-left: 2em;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	background-color: #ee3efe;
+	background-color: #9906a7;
 	border: 1px solid #110038;
 	-webkit-box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
 	box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
@@ -1990,6 +2027,7 @@ body {
 	left: 31em;
 	top: 4.55em;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 #btn-copiar:hover {
@@ -2013,6 +2051,7 @@ body {
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 #btn-descargar:hover {
@@ -2036,6 +2075,7 @@ body {
 	outline: 1px dotted #110038;
 	outline-offset: -2px;
 	cursor: pointer;
+	border-radius: 10px;
 }
 
 #play__barra__contenedor {
@@ -2062,7 +2102,36 @@ body {
 	width: 10px;
 	height: 1.3em;
 	position: absolute;
-	background: #a72cb3;
+	background: #9906a7;
+	margin-left: 2px;
+	margin-top: 2px;
+	object-fit: cover;
+}
+
+#subiendo__carga__contenedor {
+	width: 20.25em;
+	height: 1.5em;
+	position: relative;
+	background: #b4b4b4;
+	-webkit-box-shadow: inset 2px 2px 0 0 #fffcfc, inset -2px -2px 0 0 #000000;
+	box-shadow: inset 2px 2px 0 0 #fffcfc, inset -2px -2px 0 0 #000000;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	padding-left: 1px;
+	bottom: 2px;
+	object-fit: cover;
+}
+
+#subiendo__carga__contenido {
+	width: 10px;
+	height: 1.25em;
+	position: absolute;
+	background: #9906a7;
 	margin-left: 2px;
 	margin-top: 2px;
 	object-fit: cover;

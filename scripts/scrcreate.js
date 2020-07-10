@@ -34,9 +34,8 @@ const contenedorDeMisGuifos = document.querySelectorAll('.mis-guifos__gif');
 const divDeMisGuifos = document.querySelectorAll('.mis-guifos__contenedor__gif');
 const timerCaptura = document.querySelector('.captura-timer');
 const timerVistaPrevia = document.querySelector('.previa-timer');
-// const playCuadrados = document.querySelectorAll('.play__cuadrados');
 const playBarraContenido = document.querySelector('#play__barra__contenido');
-const subidaCuadrados = document.querySelectorAll('.carga__cuadrados');
+const subiendoCargaContenido = document.querySelector('#subiendo__carga__contenido');
 const imagenCamara = document.querySelector('#imagen-camara');
 const imagenGrabando = document.querySelector('#imagen-grabando');
 
@@ -364,19 +363,18 @@ botonRepetir.addEventListener('click', repetirGrabacion);
 // FUNCIÓN BARRA DE TIEMPO
 
 function completarBarraDeTiempoSubiendo() {
-	subidaCuadrados.forEach((element) => {
-		setTimeout(() => {
-			if (tema == 'night') {
-				element.style.background = '#EE3EFE';
-			} else {
-				element.style.background = '#F7C9F3';
-			}
-		}, 3000);
-	});
-	setTimeout(() => {
-		seccionSubirGif.classList.add('oculto');
-		seccionSubidaExitosa.classList.remove('oculto');
-	}, 3500);
+	let width = 0;
+	let id = setInterval(frame, 30);
+	function frame() {
+		if (width == 100) {
+			clearInterval(id);
+			seccionSubirGif.classList.add('oculto');
+			seccionSubidaExitosa.classList.remove('oculto');
+		} else {
+			width++;
+			subiendoCargaContenido.style.width = width + '%';
+		}
+	}
 }
 
 // ALMACENAR GIF CREADO
