@@ -1,5 +1,5 @@
 html {
-	background-color: #dbd8d8;
+	background-color: #faf3f3;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-family: 'Chakra Petch', sans-serif;
+	font-family: 'Carter One', cursive;
 }
 
 .sugerencias .sugerencias__titulo__texto,
@@ -22,7 +22,6 @@ body {
 	border: 1px solid #e6bbe2;
 	-webkit-box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
 	box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
-	font-family: 'Chakra Petch', sans-serif;
 	font-size: 0.875em;
 	color: #110038;
 	font-weight: normal;
@@ -145,7 +144,7 @@ body {
 	text-decoration: none;
 	color: #110038;
 	font-size: 1em;
-	padding: 0.5em 1.5em;
+	padding: 0.5em 1em;
 	width: 9em;
 	height: 1.625em;
 	margin-left: 2em;
@@ -295,7 +294,7 @@ body {
 	.menu__contenedor__botones
 	.contenedor__botones__boton
 	.flecha {
-	margin-left: -0.5em;
+	margin-left: -0.3em;
 	width: 2.25em;
 	margin-top: -0.5em;
 	cursor: pointer;
@@ -981,6 +980,10 @@ body {
 	flex-direction: column;
 }
 
+#volver {
+	margin-left: -1em;
+}
+
 .crear-guifo #cartel-inicial {
 	margin-top: 4.874em;
 	width: 42.75em;
@@ -1023,6 +1026,11 @@ body {
 
 .crear-guifo #cartel-inicial .cartel-inicial__interior .cartel-inicial__ventana {
 	margin-left: 1.6em;
+	margin-top: -0.8em;
+}
+
+#cartel-inicial__flecha {
+	width: 4em;
 }
 
 .crear-guifo #cartel-inicial .cartel-inicial__interior .cartel-inicial__texto {
@@ -1719,6 +1727,15 @@ body {
 	position: relative;
 	bottom: 1em;
 	left: 41.8em;
+}
+
+.subiendo__imagen__gif {
+	width: 20em;
+	text-align: center;
+}
+
+#subiendo__imagen__gif {
+	width: 20em;
 }
 
 .seccion-subida-exitosa {

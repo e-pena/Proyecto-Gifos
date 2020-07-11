@@ -89,10 +89,13 @@ function traerGifDelLocalStorage() {
 						return response.json();
 					})
 					.then((data) => {
-						console.log(data);
-						contenedorDeMisGuifos[i].setAttribute('src', data.data.images.original.url);
-						divDeMisGuifos[i].classList.remove('oculto');
-						return data;
+						if (contenedorDeMisGuifos[i] != undefined) {
+							contenedorDeMisGuifos[i].setAttribute('src', data.data.images.original.url);
+							divDeMisGuifos[i].classList.remove('oculto');
+							return data;
+						} else {
+							return data;
+						}
 					});
 			} catch (error) {
 				return console.error(error);
