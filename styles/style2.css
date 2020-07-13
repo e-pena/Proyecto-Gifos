@@ -2209,28 +2209,7 @@ body {
 		.menu__contenedor__botones
 		.contenedor__botones__boton
 		.boton-2 {
-		margin-left: 9.8em;
-		width: 9em;
-	}
-
-	.encabezado
-		.encabezado__menu
-		.encabezado__menu__contenedor
-		.menu__contenedor__botones
-		.contenedor__botones__boton
-		.boton-3 {
-		position: absolute;
-		top: 5.5em;
-		left: 7.8em;
-	}
-
-	.encabezado
-		.encabezado__menu
-		.encabezado__menu__contenedor
-		.menu__contenedor__botones
-		.contenedor__botones__boton
-		.flecha {
-		visibility: hidden;
+		width: fit-content;
 	}
 
 	.encabezado
@@ -2239,10 +2218,9 @@ body {
 		.menu__contenedor__botones
 		.contenedor__botones__boton
 		.botones__boton__tema {
-		width: 9em;
+		width: 10em;
 		position: absolute;
 		top: 5em;
-		left: 7.8em;
 	}
 
 	.encabezado
@@ -2681,16 +2659,7 @@ body {
 		.menu__contenedor__botones
 		.contenedor__botones__boton
 		.boton-2 {
-		margin-left: 8.2em;
-	}
-
-	.encabezado
-		.encabezado__menu
-		.encabezado__menu__contenedor
-		.menu__contenedor__botones
-		.contenedor__botones__boton
-		.boton-3 {
-		left: 6.2em;
+		width: fit-content;
 	}
 
 	.encabezado
@@ -2699,7 +2668,9 @@ body {
 		.menu__contenedor__botones
 		.contenedor__botones__boton
 		.botones__boton__tema {
-		left: 6.2em;
+		width: 10em;
+		position: absolute;
+		top: 5em;
 	}
 
 	.encabezado .encabezado__contenedor {
@@ -2944,6 +2915,10 @@ body {
 		width: 21.3em;
 	}
 
+	.seccion-subida-exitosa #subida-exitosa .subida-exitosa__principal .subida-exitosa__imagen #subida-exitosa-imagen {
+		width: 21em;
+	}
+
 	.seccion-subida-exitosa #subida-exitosa #btn-finalizado {
 		left: 4.7em;
 		top: 0em;
@@ -2965,7 +2940,7 @@ body {
 	}
 
 	.boton-1 {
-		left: 1em;
+		left: 0em;
 		position: relative;
 	}
 
@@ -2975,16 +2950,7 @@ body {
 		.menu__contenedor__botones
 		.contenedor__botones__boton
 		.boton-2 {
-		margin-left: 7.4em;
-	}
-
-	.encabezado
-		.encabezado__menu
-		.encabezado__menu__contenedor
-		.menu__contenedor__botones
-		.contenedor__botones__boton
-		.boton-3 {
-		left: 5.5em;
+		width: fit-content;
 	}
 
 	.encabezado
@@ -2993,7 +2959,9 @@ body {
 		.menu__contenedor__botones
 		.contenedor__botones__boton
 		.botones__boton__tema {
-		left: 5.5em;
+		width: 10em;
+		position: absolute;
+		top: 5em;
 	}
 
 	.encabezado .encabezado__contenedor {
@@ -3255,6 +3223,10 @@ body {
 
 	.seccion-subida-exitosa #subida-exitosa .subida-exitosa__principal .subida-exitosa__imagen {
 		width: 17.7em;
+	}
+
+	.seccion-subida-exitosa #subida-exitosa .subida-exitosa__principal .subida-exitosa__imagen #subida-exitosa-imagen {
+		width: 17em;
 	}
 
 	.seccion-subida-exitosa #subida-exitosa #btn-finalizado {
