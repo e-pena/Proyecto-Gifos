@@ -5,7 +5,7 @@
 
 ---
 
-#### Se utilizó:
+### Se utilizó:
 - HTML
 - CSS
 - SASS
@@ -15,7 +15,7 @@
 
 ---
 
-#### Este sitio permite:
+### Este sitio permite:
 - Ver los gifs que son tendencia de giphy.com.
 - Ver los hashtags relacionados con las tendencias.
 - Buscar gifs relacionados con las tendencias.
@@ -29,8 +29,8 @@
 
 ---
 
-#### El sitio es responsive.
+### El sitio es responsive.
 
 ---
 
-#### Podés acceder al sitio [aquí](https://epena-gifos.netlify.app/)
+### Podés acceder al sitio [aquí](https://epena-gifos.netlify.app/)
